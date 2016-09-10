@@ -28,7 +28,9 @@
     <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+    <link href="resource/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/resource/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="/resource/js/bootstrap.js"></script>
 </head>
 
 <body>
@@ -56,5 +58,8 @@ welcome to spitter!<br>
 </form>
 <h1>文件下载</h1>
 <a href="download">下载链接</a>
+<h1>Mybatis测试</h1>
+<a href="classmanager/toclasslist">整合Mybatis测试</a>
+
 </body>
 </html>
