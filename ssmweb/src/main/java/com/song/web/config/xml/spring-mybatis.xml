@@ -7,18 +7,23 @@
         <!-- 注入数据库连接池 -->
         <property name="dataSource" ref="dataSource" />
         <!-- 配置MyBaties全局配置文件:spring-mybatis.xml -->
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
-        <!-- 扫描entity包 使用别名 -->
-        <property name="typeAliasesPackage" value="com.soecode.lyf.entity" />
+        <property name="configLocation" value="com/song/web/config/xml/mybatis-config.xml" />
+
         <!-- 扫描sql配置文件:mapper需要的xml文件 -->
-        <property name="mapperLocations" value="classpath:model/*.xml" />
+        <property name="mapperLocations" value="/com/song/web/model/*.xml" />
     </bean>
 
     <!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <!-- 注入sqlSessionFactory -->
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        &lt;!&ndash; 注入sqlSessionFactory &ndash;&gt;
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-        <!-- 给出需要扫描Dao接口包 -->
+        &lt;!&ndash; 给出需要扫描Dao接口包 &ndash;&gt;
         <property name="basePackage" value="com.soecode.lyf.dao" />
+    </bean>-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/baron"/>
+        <property name="username" value="root"/>
+        <property name="password" value="songjin"/>
     </bean>
 </beans>

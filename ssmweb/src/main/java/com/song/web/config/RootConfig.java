@@ -8,11 +8,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Created by sj124 on 2016/8/31.
  */
 @Configuration
-@ImportResource("xml/spring-mybatis.xml")
+@ImportResource("/com/song/web/config/xml/spring-mybatis.xml")
 @ComponentScan(basePackages ={"com.song.web"},
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class)})
 public class RootConfig {
-    @Bean
+    /*@Bean
     public BasicDataSource dataSource(){
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -22,5 +22,5 @@ public class RootConfig {
         dataSource.setInitialSize(5);
         dataSource.setMaxOpenPreparedStatements(10);
         return dataSource;
-    }
+    }*/
 }
