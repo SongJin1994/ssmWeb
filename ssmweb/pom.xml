@@ -152,9 +152,35 @@
       <artifactId>commons-io</artifactId>
       <version>2.5</version>
     </dependency>-->
-
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+      <version>2.2</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>ssm</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.1</version>
+        <configuration>
+          <server>myserver</server>
+          <username>baron</username>
+          <password>songjin</password>
+          <url>http://192.168.234.128/manager/text</url>
+          <path>/ssm</path>
+          <port>80</port>
+          <uriEncoding>UTF-8</uriEncoding>
+        </configuration>
+      </plugin>
+
+    </plugins>
   </build>
 </project>
