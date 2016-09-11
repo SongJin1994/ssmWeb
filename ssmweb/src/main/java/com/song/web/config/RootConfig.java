@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Created by sj124 on 2016/8/31.
  */
 @Configuration
-@ImportResource("/WEB-INF/spring-mybatis.xml")
+@ImportResource("classpath:xml/spring-mybatis.xml")
 @ComponentScan(basePackages ={"com.song"},
         excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class)})
 public class RootConfig {
